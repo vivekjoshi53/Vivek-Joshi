@@ -22,11 +22,10 @@ function ScrollToTop() {
 }
 
 function Site() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('devfolio-theme') || 'dark')
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
-    localStorage.setItem('devfolio-theme', theme)
     document.title = `${siteConfig.name} | ${siteConfig.role}`
   }, [theme])
 
