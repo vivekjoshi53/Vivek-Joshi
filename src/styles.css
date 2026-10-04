@@ -94,10 +94,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .hero__scroll { display: inline-flex; align-items: center; gap: 10px; margin-top: 55px; color: var(--subtle); font-size: 11px; }
 .hero__scroll svg { color: var(--signal); }
 .hero-art { position: relative; width: 100%; min-height: 438px; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); background: radial-gradient(ellipse at 52% 51%, color-mix(in srgb, var(--surface-raised) 88%, transparent), var(--bg) 68%); isolation: isolate; animation: rise-in .72s .08s both; }
-.hero-art__grid { position: absolute; inset: 0; z-index: -1; opacity: .55; background-image: linear-gradient(color-mix(in srgb, var(--line) 46%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 46%, transparent) 1px, transparent 1px); background-size: 38px 38px; mask-image: radial-gradient(ellipse at center, black 12%, transparent 79%); }
-.hero-art__orbit { position: absolute; top: 50%; left: 50%; width: 320px; aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--accent) 31%, transparent); border-radius: 50%; transform: translate(-50%, -50%) rotate(-22deg) scaleY(.46); }
+.hero-art__grid { position: absolute; inset: 0; z-index: 0; opacity: .55; background-image: linear-gradient(color-mix(in srgb, var(--line) 46%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 46%, transparent) 1px, transparent 1px); background-size: 38px 38px; mask-image: radial-gradient(ellipse at center, black 12%, transparent 79%); }
+.hero-art__orbit { position: absolute; top: 50%; left: 50%; width: 320px; aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--accent) 31%, transparent); border-radius: 50%; transform: translate(-50%, -50%) rotate(-22deg) scaleY(.46); z-index: 2; }
 .hero-art__orbit--two { width: 390px; border-color: color-mix(in srgb, var(--signal) 24%, transparent); transform: translate(-50%, -50%) rotate(38deg) scaleY(.48); }
-.hero-art__core { width: 197px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--signal) 58%, var(--line)); border-radius: 50%; background: radial-gradient(circle at 36% 28%, color-mix(in srgb, var(--surface-raised) 80%, var(--signal)), var(--surface) 69%); box-shadow: 0 0 70px color-mix(in srgb, var(--signal) 12%, transparent), inset 0 0 35px color-mix(in srgb, var(--signal) 7%, transparent); }
+.hero-art__core { position: relative; z-index: 3; width: 197px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--signal) 58%, var(--line)); border-radius: 50%; background: radial-gradient(circle at 36% 28%, color-mix(in srgb, var(--surface-raised) 80%, var(--signal)), var(--surface) 69%); box-shadow: 0 0 70px color-mix(in srgb, var(--signal) 12%, transparent), inset 0 0 35px color-mix(in srgb, var(--signal) 7%, transparent); }
 .hero-art__core-inner { width: 145px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border: 1px solid color-mix(in srgb, var(--line-strong) 70%, transparent); border-radius: 50%; }
 .hero-art__core-inner span { color: var(--text); font-family: var(--font-display); font-size: 48px; font-weight: 500; line-height: 1; }
 .hero-art__core-inner small { color: var(--signal); font-size: 8px; font-weight: 700; letter-spacing: 1.2px; line-height: 1.5; text-align: center; }
@@ -107,11 +107,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-code b { font-size: 11px; font-weight: 600; }
 .hero-code small { color: var(--subtle); font-size: 9px; }
 .hero-code > svg { color: var(--subtle); }
-.hero-code--top { top: 76px; left: 18px; }
-.hero-code--bottom { right: 17px; bottom: 80px; }
-.hero-art__availability { position: absolute; right: 18px; bottom: 19px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 10px; }
+.hero-code--top { top: 32px; left: 18px; }
+.hero-code--bottom { right: 17px; bottom: 32px; }
+.hero-art__availability { position: absolute; z-index: 3; right: 18px; bottom: 19px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 10px; }
 .hero-art__availability .status-dot { width: 6px; height: 6px; flex-basis: 6px; }
-.hero-art__index { position: absolute; top: 20px; right: 19px; color: var(--subtle); font-size: 8px; letter-spacing: 1.1px; }
+.hero-art__index { position: absolute; z-index: 3; top: 20px; right: 19px; color: var(--subtle); font-size: 8px; letter-spacing: 1.1px; }
 
 .section { padding-block: 104px; border-top: 1px solid var(--line); }
 .section-title h2, .plain-heading { margin: 0; font-family: var(--font-display); font-size: clamp(32px, 3.2vw, 43px); font-weight: 500; letter-spacing: 0; line-height: 1.18; }
@@ -365,8 +365,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .hero h1 { font-size: clamp(43px, 6vw, 58px); }
   .hero-art { min-height: 385px; }
   .hero-code { min-width: 190px; padding: 10px; }
-  .hero-code--top { left: 10px; }
-  .hero-code--bottom { right: 10px; }
+  .hero-code--top { top: 18px; left: 10px; }
+  .hero-code--bottom { right: 10px; bottom: 18px; }
   .project-grid { gap: 13px; }
   .project-card__body { padding: 15px 13px 14px; }
   .project-card h3 { font-size: 17px; }
@@ -397,8 +397,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .hero-art__core-inner span { font-size: 40px; }
   .hero-art__orbit { width: 265px; }
   .hero-art__orbit--two { width: 326px; }
-  .hero-code--top { top: 47px; }
-  .hero-code--bottom { bottom: 60px; }
+  .hero-code--top { top: 20px; }
+  .hero-code--bottom { bottom: 20px; }
   .section { padding-block: 76px; }
   .about-preview { padding-block: 77px 55px; }
   .about-preview__grid { grid-template-columns: 1fr; gap: 10px; }
@@ -466,8 +466,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .hero h1 { font-size: 43px; }
   .hero-art { min-height: 320px; }
   .hero-code { min-width: 176px; }
-  .hero-code--top { top: 33px; }
-  .hero-code--bottom { right: 6px; bottom: 48px; }
+  .hero-code--top { top: 12px; }
+  .hero-code--bottom { right: 6px; bottom: 20px; }
   .hero-art__availability { right: 11px; bottom: 12px; font-size: 9px; }
   .hero-art__index { top: 12px; right: 11px; }
   .form-submit .button { width: 100%; }
