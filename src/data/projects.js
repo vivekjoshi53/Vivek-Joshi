@@ -16,7 +16,7 @@ export const projects = [
     category: 'Fitness',
     description: 'A gym website presenting classes, membership options, and practical visitor information.',
     stack: ['React', 'JavaScript', 'CSS3'],
-    demoUrl: 'https://gym-d6trc0i4j-vivekjoshi53-s-projects.vercel.app/',
+    demoUrl: 'https://gym-pi-hazel.vercel.app/',
     repoUrl: '',
     visual: 'fitness',
     featured: true,
